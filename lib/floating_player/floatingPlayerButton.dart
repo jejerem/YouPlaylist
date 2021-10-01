@@ -5,6 +5,8 @@ import 'package:sizer/sizer.dart';
 import 'package:you_play_list/player_page/player_page_scaffold.dart';
 import 'package:you_play_list/player_page/player_update.dart';
 
+// Will be replaced by a material button to avoid scale issues.
+
 class FloattingPlayerButton extends StatefulWidget {
   FloattingPlayerButton();
 

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:you_play_list/player_page/player_update.dart';
 import 'package:sizer/sizer.dart';
-import '../constants.dart';
+import '../constantes/constants.dart';
 import 'song_picture_section.dart';
 
 class ImageSong extends StatefulWidget {

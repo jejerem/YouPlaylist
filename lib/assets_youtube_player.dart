@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:you_play_list/player_page/player_update.dart';
-import 'package:you_play_list/youtube_data.dart';
+import 'package:you_play_list/requests_tasks/youtube_data.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart'
     show AudioOnlyStreamInfo, Video;
 
-import 'toasts.dart';
+import 'constantes/toasts.dart';
 
 class AssetsYoutubePlayer {
   AssetsYoutubePlayer() {
@@ -382,6 +382,8 @@ class AssetsYoutubePlayer {
   }
 
   void loadNextVideo(nextVideo) async {
+    // Load the video we want in a playlist.
+
     int currentIndexSong = indexOfSongPl(nextVideo, listSongsCurrentPlaylist);
     if (!mapSongInfos.containsKey(nextVideo.url)) {
       isLoading = true;

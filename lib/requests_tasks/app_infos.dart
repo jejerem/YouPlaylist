@@ -3,7 +3,7 @@ import 'package:package_info/package_info.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
 
-import 'constants.dart';
+import '../constantes/constants.dart';
 
 class AppInfos {
   static void checkVersion(BuildContext context) async {
@@ -53,10 +53,10 @@ class AppInfos {
                 // To display the title it is optional.
                 title: Text("New version available"),
 
-                // Message which will be pop up on the screen.
+                // Message which will pop up on the screen.
                 content: Text(
                     "Please download the latest version YouPlaylist $officialVersion"),
-                // Action widget which will provide the user to acknowledge the choice.
+                // Action widget which will provide the user to make the choice.
                 actions: [
                   TextButton(
                       child: Text("Download now"),

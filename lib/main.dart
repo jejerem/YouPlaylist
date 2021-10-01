@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:you_play_list/bottom_navigation_bar/bottom_navigation_bar_content.dart';
-import 'package:you_play_list/webview_ytb.dart';
+import 'package:you_play_list/webview_interactions/webview_ytb.dart';
 import 'floating_player/floatingPlayerButton.dart';
 
 StreamController<int> streamController = StreamController<int>();
@@ -12,11 +12,11 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
-    runApp(new MyApp());
+    runApp(new YouPlaylist());
   });
 }
 
-class MyApp extends StatelessWidget {
+class YouPlaylist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

@@ -1,6 +1,6 @@
 import 'package:webview_flutter/webview_flutter.dart';
 
-import 'constants.dart';
+import '../constantes/constants.dart';
 
 class Link {
   Link();

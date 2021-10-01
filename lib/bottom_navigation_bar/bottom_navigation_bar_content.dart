@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:you_play_list/player_page/player_update.dart';
 
-import '../link.dart';
+import '../webview_interactions/link.dart';
 
 class BottomNavigationBarContent extends StatefulWidget {
   const BottomNavigationBarContent({Key? key}) : super(key: key);
@@ -39,6 +39,8 @@ class _BottomNavigationBarContentState
   ];
 
   void selectHiddenItem(String index) async {
+    // We use their bottom bar to make ours work.
+
     await PlayerUpdate.webViewController!.evaluateJavascript("""
     
     var listItems = document.getElementsByTagName('ytm-pivot-bar-item-renderer');

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:you_play_list/constants.dart';
+import 'package:you_play_list/constantes/constants.dart';
 import 'package:you_play_list/player_page/player_update.dart';
 
 class ThumbnailSection extends StatefulWidget {

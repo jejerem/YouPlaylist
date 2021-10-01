@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:you_play_list/assets_youtube_player.dart';
-import 'package:you_play_list/link.dart';
+import 'package:you_play_list/webview_interactions/link.dart';
 import 'package:you_play_list/player_page/player_update.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart' show Video;
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'app_infos.dart';
-import 'constants.dart';
+import '../requests_tasks/app_infos.dart';
+import '../constantes/constants.dart';
 
 class WebViewYTB extends StatefulWidget {
   WebViewYTB({Key? key}) : super(key: key);
@@ -61,6 +61,8 @@ class _WebViewYTBState extends State<WebViewYTB> with WidgetsBindingObserver {
   }
 
   void makeYoutubeDark() async {
+    // In development for dark theme.
+
     await _webViewController!.evaluateJavascript("""
     
       document.styleSheets[3].insertRule(".chip-container {background-color : rgba(255,255,255,0.102);}",document.styleSheets[3].cssRules.length);
@@ -76,6 +78,8 @@ class _WebViewYTBState extends State<WebViewYTB> with WidgetsBindingObserver {
   }
 
   void makeYoutubeButtonInvisible() async {
+    // We make their bottom bar invisible to replace it with ours.
+
     await _webViewController!.evaluateJavascript("""
       var youtubeButton = document.getElementsByClassName('mobile-topbar-header-endpoint');
       if (bottomBar.length != 0){
@@ -256,8 +260,6 @@ class _WebViewYTBState extends State<WebViewYTB> with WidgetsBindingObserver {
                   Link.mutation(_webViewController!);
                   activated = true;
                 }
-
-                // Check it doesnt link more than once.
               },
             )));
   }

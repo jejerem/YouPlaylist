@@ -37,8 +37,11 @@ dependencies:
   google_fonts: ^2.1.0
   
   sizer: ^2.0.13
+
   marquee_widget: ^1.2.0
+
   package_info: ^2.0.2
+  
   url_launcher: ^6.0.9
 
 dev_dependencies:
