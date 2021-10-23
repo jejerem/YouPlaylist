@@ -3,7 +3,7 @@ import 'package:package_info/package_info.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
 
-import '../constantes/constants.dart';
+import '../constants/values.dart';
 
 class AppInfos {
   static void checkVersion(BuildContext context) async {

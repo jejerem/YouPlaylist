@@ -7,7 +7,7 @@ import 'package:you_play_list/requests_tasks/youtube_data.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart'
     show AudioOnlyStreamInfo, Video;
 
-import 'constantes/toasts.dart';
+import 'constants/toasts.dart';
 
 class AssetsYoutubePlayer {
   AssetsYoutubePlayer() {

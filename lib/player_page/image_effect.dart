@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:you_play_list/constantes/constants.dart';
+import 'package:you_play_list/constants/values.dart';
 import 'package:you_play_list/player_page/player_update.dart';
 import 'package:sizer/sizer.dart';
 

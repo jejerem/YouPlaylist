@@ -7,7 +7,7 @@ import 'package:youtube_explode_dart/youtube_explode_dart.dart' show Video;
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../requests_tasks/app_infos.dart';
-import '../constantes/constants.dart';
+import 'package:you_play_list/constants/values.dart';
 
 class WebViewYTB extends StatefulWidget {
   WebViewYTB({Key? key}) : super(key: key);
@@ -60,18 +60,24 @@ class _WebViewYTBState extends State<WebViewYTB> with WidgetsBindingObserver {
     await _webViewController!.evaluateJavascript(Constants.linkToProgram);
   }
 
+  void makeMenuButton() async {
+    await _webViewController!.evaluateJavascript("""
+    
+     """);
+  }
+
   void makeYoutubeDark() async {
     // In development for dark theme.
 
     await _webViewController!.evaluateJavascript("""
     
-      document.styleSheets[3].insertRule(".chip-container {background-color : rgba(255,255,255,0.102);}",document.styleSheets[3].cssRules.length);
+     
       
-      document.styleSheets[3].insertRule("ytm-chip-cloud-chip-renderer {background-color : white;}",document.styleSheets[3].cssRules.length);
-      document.styleSheets[3].insertRule(".chip-bar-contents {background-color : black;}",document.styleSheets[3].cssRules.length);
-      
+      document.styleSheets[3].insertRule("ytm-chip-cloud-chip-renderer {background-color : #181818;}",document.styleSheets[3].cssRules.length);
+      document.styleSheets[3].insertRule(".chip-bar-contents {background-color : #181818;}",document.styleSheets[3].cssRules.length);
+    
 
-      document.styleSheets[3].insertRule("body {background-color : #0f0f0f}",document.styleSheets[3].cssRules.length);
+      document.styleSheets[3].insertRule("body {background-color : #181818}",document.styleSheets[3].cssRules.length);
       document.styleSheets[3].insertRule(".large-media-item-headline {color : white}",document.styleSheets[3].cssRules.length);
       document.styleSheets[3].insertRule(".ytm-badge-and-byline-item-byline.small-text {color : ghostwhite}",document.styleSheets[3].cssRules.length);
       """);
@@ -97,6 +103,16 @@ class _WebViewYTBState extends State<WebViewYTB> with WidgetsBindingObserver {
       """);
   }
 
+  void selectMusicSection() async {
+    await _webViewController!.evaluateJavascript("""
+    chips = document.getElementsByClassName('typography-title-1 chip-text')
+    for (let i=0; i<videos.length;i++){
+      if (chips[i].innerText == "Musique"){
+          chips[i].click();
+      }
+    }""");
+  }
+
   void linkSongsFromPlayList() async {
     await _webViewController!
         .evaluateJavascript(Constants.linkSongsFromPlaylist);
@@ -107,8 +123,16 @@ class _WebViewYTBState extends State<WebViewYTB> with WidgetsBindingObserver {
       Navigator.of(context).pop();
       return false;
     }
+
     if (await _webViewController!.canGoBack()) {
       _webViewController!.goBack();
+      return false;
+    }
+
+    if (currentUrl != null) {
+      if (currentUrl!.contains("google.com")) {
+        _webViewController!.loadUrl(Constants.youtube_url);
+      }
     }
 
     return false;
