@@ -276,6 +276,7 @@ class AssetsYoutubePlayer {
       isLoading = false;
       return;
     }
+
     if (mapSongInfos.containsKey(video.url) &&
         !isContaining(listSongsRemoved, video)) {
       if (mapSongInfos[video.url]!.length == 2) {

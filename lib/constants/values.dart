@@ -3,7 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Constants {
   static const String youtube_url = "https://www.youtube.com";
-  static const String insta_oce_url = "https://www.instagram.com/massouliero/";
+  static const String youtube_query_url =
+      "https://www.youtube.com/results?search_query=";
+
+  // Instagram url
+  static const String instaUrl = "https://www.instagram.com/";
 
   static const String apkFileUrl =
       "https://drive.google.com/file/d/1d9fDAUdjY5IEfuft29flSInRHdMlcPTI/view";

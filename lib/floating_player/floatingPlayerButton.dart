@@ -21,10 +21,6 @@ class _FloattingPlayerButtonState extends State<FloattingPlayerButton> {
 
   @override
   Widget build(BuildContext context) {
-    SizerUtil.height = MediaQuery.of(context).size.height;
-    SizerUtil.width = MediaQuery.of(context).size.width;
-    SizerUtil.orientation = Orientation.portrait;
-
     floatingPlayer = FloatingActionButton.extended(
       heroTag: null,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,

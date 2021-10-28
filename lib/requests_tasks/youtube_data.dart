@@ -7,6 +7,7 @@ class YoutubeData {
   Future<Iterable<AudioOnlyStreamInfo>> getAudio(Video video) async {
     // get video's "audio only" streams.
     YoutubeExplode yt = YoutubeExplode();
+
     var manifest = await yt.videos.streamsClient.getManifest(video.url);
     var streams = manifest.audioOnly;
     yt.close();
@@ -26,7 +27,7 @@ class YoutubeData {
     var audio;
     var streams = await getAudio(video);
     if (streams.length > 0) {
-      audio = streams.first;
+      audio = streams.withHighestBitrate();
     } else {
       return [];
     }

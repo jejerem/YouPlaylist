@@ -70,9 +70,11 @@ class PlayerUpdate {
 
   static void loadSaveImage() {
     /// To load and save thumbnail for PlayerPage's images.
-
-    if (assetsAudioPlayer!.current.valueOrNull != null) {
-      PlayerUpdate.thumbnailUrl = assetsAudioPlayer!.getCurrentAudioImage!.path;
+    if (assetsAudioPlayer != null) {
+      if (assetsAudioPlayer!.current.valueOrNull != null) {
+        PlayerUpdate.thumbnailUrl =
+            assetsAudioPlayer!.getCurrentAudioImage!.path;
+      }
     }
   }
 
